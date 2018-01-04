@@ -19,6 +19,7 @@ import { HomeComponent } from './home/home.component';
 import { AreaEditComponent } from './area-edit/area-edit.component';
 import { ForecastComponent } from './forecast/forecast.component';
 import { HttpClientModule } from '@angular/common/http';
+import { OpenWeatherMapService } from './services/open-weather-map.service';
 
 
 @NgModule({
@@ -43,7 +44,9 @@ import { HttpClientModule } from '@angular/common/http';
     MatCardModule,
     MatInputModule,
   ],
-  providers: [],
+  providers: [
+    OpenWeatherMapService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
