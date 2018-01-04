@@ -16,11 +16,13 @@ import {
   MatSidenavModule,
   MatToolbarModule
 } from "@angular/material";
+import { HomeComponent } from './home/home.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
