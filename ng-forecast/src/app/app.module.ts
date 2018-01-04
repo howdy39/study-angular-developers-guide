@@ -17,12 +17,14 @@ import {
   MatToolbarModule
 } from "@angular/material";
 import { HomeComponent } from './home/home.component';
+import { AreaEditComponent } from './area-edit/area-edit.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    AreaEditComponent
   ],
   imports: [
     BrowserModule,
