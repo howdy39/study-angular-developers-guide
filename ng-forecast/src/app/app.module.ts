@@ -18,13 +18,15 @@ import {
 } from "@angular/material";
 import { HomeComponent } from './home/home.component';
 import { AreaEditComponent } from './area-edit/area-edit.component';
+import { ForecastComponent } from './forecast/forecast.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    AreaEditComponent
+    AreaEditComponent,
+    ForecastComponent
   ],
   imports: [
     BrowserModule,
