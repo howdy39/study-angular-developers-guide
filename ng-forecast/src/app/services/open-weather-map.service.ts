@@ -31,7 +31,7 @@ export class OpenWeatherMapService {
   }
 
   /**
-   * 1週間の天気を取得
+   * 3時間ごとの天気を取得
    */
   forecast(city: string): Observable<OpenWeatherMap.Forecast> {
 
