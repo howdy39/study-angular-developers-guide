@@ -20,6 +20,7 @@ import { AreaEditComponent } from './area-edit/area-edit.component';
 import { ForecastComponent } from './forecast/forecast.component';
 import { HttpClientModule } from '@angular/common/http';
 import { OpenWeatherMapService } from './services/open-weather-map.service';
+import { UnixTimeDatePipe } from './pipes/unix-time-date.pipe';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { OpenWeatherMapService } from './services/open-weather-map.service';
     AppComponent,
     HomeComponent,
     AreaEditComponent,
-    ForecastComponent
+    ForecastComponent,
+    UnixTimeDatePipe
   ],
   imports: [
     BrowserModule,
