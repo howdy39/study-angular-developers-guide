@@ -6,7 +6,7 @@ import { OpenWeatherMap } from '../shared/models/open-weather-map';
 @Injectable()
 export class OpenWeatherMapService {
   private API = '//api.openweathermap.org/data/2.5';
-  private APP_ID = 'XXXXXX';
+  private APP_ID = 'e34ae88b3b50cb21cf298ff7b064368b';
 
   constructor(
     public http: HttpClient
@@ -34,17 +34,17 @@ export class OpenWeatherMapService {
    * 1週間の天気を取得
    */
   forecast(city: string): Observable<OpenWeatherMap.Forecast> {
+
     let params = new HttpParams();
     const data = {
       appid: this.APP_ID,
       units: 'metric',
       lang: 'JP',
-      cnt: 7,
       q: city
     };
     Object.keys(data).forEach(function (key) {
       params = params.set(key, data[key]);
     })
-    return this.http.get<OpenWeatherMap.Forecast>(`${this.API}/forecast/daily`, {params});
+    return this.http.get<OpenWeatherMap.Forecast>(`${this.API}/forecast`, {params});
   }
 }
