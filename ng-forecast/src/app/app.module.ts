@@ -18,9 +18,11 @@ import {
 import { HomeComponent } from './home/home.component';
 import { AreaEditComponent } from './area-edit/area-edit.component';
 import { ForecastComponent } from './forecast/forecast.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { OpenWeatherMapService } from './services/open-weather-map.service';
 import { UnixTimeDatePipe } from './pipes/unix-time-date.pipe';
+import { LoadingService } from './services/loading.service';
+import { LoadingInterceptor } from './loading-interceptor';
 
 
 @NgModule({
@@ -47,7 +49,13 @@ import { UnixTimeDatePipe } from './pipes/unix-time-date.pipe';
     MatInputModule,
   ],
   providers: [
-    OpenWeatherMapService
+    OpenWeatherMapService,
+    LoadingService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: LoadingInterceptor,
+      multi: true,
+    }
   ],
   bootstrap: [AppComponent]
 })
