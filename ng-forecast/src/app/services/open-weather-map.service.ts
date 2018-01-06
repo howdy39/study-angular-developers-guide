@@ -26,7 +26,7 @@ export class OpenWeatherMapService {
     };
     Object.keys(data).forEach(function (key) {
       params = params.set(key, data[key]);
-    })
+    });
     return this.http.get<OpenWeatherMap.Current>(`${this.API}/weather`, {params});
   }
 
@@ -44,7 +44,7 @@ export class OpenWeatherMapService {
     };
     Object.keys(data).forEach(function (key) {
       params = params.set(key, data[key]);
-    })
+    });
     return this.http.get<OpenWeatherMap.Forecast>(`${this.API}/forecast`, {params});
   }
 }
