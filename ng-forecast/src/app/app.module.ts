@@ -23,6 +23,7 @@ import { OpenWeatherMapService } from './services/open-weather-map.service';
 import { UnixTimeDatePipe } from './pipes/unix-time-date.pipe';
 import { LoadingService } from './services/loading.service';
 import { LoadingInterceptor } from './loading-interceptor';
+import { AreaService } from './services/area.service';
 
 
 @NgModule({
@@ -55,7 +56,8 @@ import { LoadingInterceptor } from './loading-interceptor';
       provide: HTTP_INTERCEPTORS,
       useClass: LoadingInterceptor,
       multi: true,
-    }
+    },
+    AreaService,
   ],
   bootstrap: [AppComponent]
 })
