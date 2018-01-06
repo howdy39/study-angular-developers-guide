@@ -1,11 +1,23 @@
 import { Component, OnInit } from '@angular/core';
 import { Area } from '../shared/models/area';
 import { AreaService } from '../services/area.service';
+import { transition, trigger, useAnimation } from '@angular/animations';
+import { slideFadeIn, slideFadeOut } from '../app.animations';
 
 @Component({
   selector: 'app-area-edit',
   templateUrl: './area-edit.component.html',
-  styleUrls: ['./area-edit.component.scss']
+  styleUrls: ['./area-edit.component.scss'],
+  animations: [
+    trigger('slideFade', [
+      transition(':enter', [
+        useAnimation(slideFadeIn)
+      ]),
+      transition(':leave', [
+        useAnimation(slideFadeOut)
+      ])
+    ])
+  ],
 })
 export class AreaEditComponent implements OnInit {
   public areas: Area[]  = [];
